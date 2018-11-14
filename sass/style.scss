@@ -1,0 +1,46 @@
+/*
+  Theme Name:     Aquabus 2018 Child
+  Theme URI:      http://seatoskywebsolutions.ca
+  Description:    Custom child-theme for The Aquabus 2018
+  Author:         SSWS
+  Author URI:     https://seatoskywebsolutions.ca
+  Template:       brilliance_pro
+  Version:        1.0.0
+*/
+
+@import "abstractions/functions";
+@import "abstractions/mixins";
+@import "base/breakpoints";
+@import "base/variables";
+@import "base/global";
+
+
+/*!-------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+@import "modules/buttons";
+
+
+/*!-------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "modules/navigation";
+
+/*!-------------------------------------------------------------
+# Icons
+--------------------------------------------------------------*/
+@import "modules/icons";
+@import "modules/links";
+@import "modules/lines";
+@import "modules/form";
+@import "modules/footer";
+
+/*!-------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "base/typography";
+
+/*!-------------------------------------------------------------
+# General Styles
+--------------------------------------------------------------*/
+@import "modules/tables";

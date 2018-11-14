@@ -1,0 +1,36 @@
+//IE 11 Flex box
+.ie11 {
+  // main {
+  //   flex: 1 1 auto;
+  // }
+}
+
+.debug {
+  border: $red solid 1px;
+}
+
+body * {
+  box-sizing: border-box;
+  // color: $gray-dark;
+  font-family: $font-body;
+}
+
+*::selection {
+    // background-color: $blue;
+    // color: $white;
+}
+
+
+@media screen and (min-width: 768px) {
+  .col-full {
+    max-width: 83.5em;
+
+    footer & {
+      max-width: 66.5em;
+    }
+  }
+}
+
+.woocommerce-message {
+  background-color: $gray-30 !important;
+}

@@ -1,0 +1,109 @@
+/**
+ * Breakpoint Configuration
+ * @see http://breakpoint-sass.com/
+ *
+ * Our guidelines: https://camppacific.atlassian.net/wiki/spaces/TT/pages/1628862/Mobile+Responsive+Guidelines
+ *
+ */
+
+// NOTE: We're using breakpoint-sass defaults which uses min-width.
+// We build following mobile first approach to xsmall and small shouldn't be used.
+// They are here because the default emulsify styles are using them.
+$xsmall: 0;
+$small: 0;
+$medium: 768px;
+$large: 900px;
+$xlarge: 1200px;
+$xxlarge: 1800px;
+$max-width: $xxlarge;
+
+$breakpoints: ($medium, $large, $xlarge, $xxlarge);
+
+// Device resolutions based on https://camppacific.atlassian.net/wiki/spaces/TT/pages/16908296/Non-Drupal+responsive+image+asset+guidelines
+$one-point-fivex: min-resolution 1.5dppx;
+$twox: min-resolution 2dppx;
+$threex: min-resolution 3dppx;
+$fourx: min-resolution 4dppx;
+$fivex: min-resolution 5dppx;
+
+/// Mixin - xs Breakpoint
+/// Allows easier @include xs {} syntax
+@mixin xsmall-up {
+  @include breakpoint($xsmall) {
+    @content;
+  }
+}
+
+/// Mixin - small Breakpoint
+/// Allows easier @include small {} syntax
+@mixin small-up {
+  @include breakpoint($small) {
+    @content;
+  }
+}
+
+/// Mixin - small Breakpoint
+/// Allows easier @include small {} syntax
+@mixin small-only() {
+  @include breakpoint(0 $medium - 1) {
+    @content;
+  }
+}
+// Use:
+// .class-xzy {
+//   @include small-only() {
+//     styles here
+//   }
+// }
+
+/// Mixin - medium Breakpoint
+/// Allows easier @include medium {} syntax
+@mixin medium-up {
+  @include breakpoint($medium) {
+    @content;
+  }
+}
+
+@mixin medium-down() {
+  @include breakpoint(0 $large - 1) {
+    @content;
+  }
+}
+
+@mixin medium-small() {
+  @include breakpoint($medium 800px) {
+    @content;
+  }
+}
+
+/// Mixin - large Breakpoint
+/// Allows easier @include large {} syntax
+@mixin large-up {
+  @include breakpoint($large) {
+    @content;
+  }
+}
+
+/// Mixin - xl Breakpoint
+/// Allows easier @include xl {} syntax
+@mixin xlarge-up {
+  @include breakpoint($xlarge) {
+    @content;
+  }
+}
+
+/// Mixin - xxl Breakpoint
+/// Allows easier @include xxl {} syntax
+@mixin xxlarge-up {
+  @include breakpoint($xxlarge) {
+    @content;
+  }
+}
+
+/// Mixin - max-width Breakpoint
+/// Allows easier @include max-width {} syntax
+@mixin max-width {
+  @include breakpoint($max-width) {
+    @content;
+  }
+}

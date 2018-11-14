@@ -1,0 +1,205 @@
+// Mixins
+
+/// Mixin - Clearfix.
+/// Adds clearfix based on http://bourbon.io/docs/#clearfix
+/// use example =   @include cleafix
+
+@mixin clearfix() {
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+/// Mixin - list-reset
+/// Reset list item defaults when no margin, padding, list styles needed
+@mixin list-reset() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+/// Mixin - Outer container
+/// Outer container mixin for large screens
+@mixin outer-container() {
+  @include clearfix();
+  max-width: $grid-width;// - rem(60);  //
+  margin: 0 auto;
+}
+
+
+/// Assigns values to the given property for all the viewports based on global $breakpoints setting.
+/// $breakpoints is a list that containt values for all the suported vieports but without initial 0 value
+/// $small-value is assumed to be a viewport that starts with 0 and it's designed for mobile-first development
+/// If the values are unitless or lists it will apply rem() function to them.
+/// @param {string} $property - a property to be given responsive values
+/// @param {number | string | list} $small-value - a value for the  mobile viewport
+/// @param {number | string | list} $medium-value: a value for the  desktop viewport
+/// @example
+///   @include responsive-value(width, 100%, 500);
+///   @include responsive-value(margin, auto, 10 0 20 5);
+///   @include responsive-value(font-size, null, null, 40px);
+///   @include responsive-value(font-size, 20, null, 40px);
+/// @author Alan Bogusiewicz
+@mixin responsive-value($property, $small-value, $other-values...) {
+
+  @if ($small-value) {
+    @if (type-of($small-value) != string) {
+      @if (type-of($small-value) == list) {
+        $small-value: rem($small-value);
+      } @elseif unitless($small-value) {
+        $small-value: rem($small-value);
+      }
+    }
+
+    #{$property}: $small-value;
+  }
+
+
+  @if (length($other-values) > 0) {
+    @for $i from 1 through length($other-values) {
+      $value: null;
+      $current-value: nth($other-values, $i);
+
+      @if ($current-value) {
+        @if (type-of($current-value) != string) {
+          @if (type-of($current-value) == list) {
+            $value: rem($current-value);
+          } @elseif unitless($current-value) {
+            $value: rem($current-value);
+          } @else {
+            $value: $current-value;
+          }
+        };
+
+        @include breakpoint(nth($breakpoints, $i)) {
+          #{$property}: $value;
+        }
+      }
+    }
+  }
+}
+
+// @author Gabriele Carson
+@mixin responsive-bg-images($breakpoints) {
+  background-position: center center;
+  background-size: cover;
+
+  // Loop through the breakpoints to setup the responsive images
+  @each $breakpoint, $images in $breakpoints {
+
+    @if ($breakpoint == "default") {
+      @each $img-resolution, $image in $images {
+        @include set-img-resolution($img-resolution, $image);
+      }
+    } @else {
+      @include breakpoint($breakpoint) {
+        @each $img-resolution, $image in $images {
+          @include set-img-resolution($img-resolution, $image);
+        }
+      }
+    }
+  }
+}
+
+
+/// This sets the background image media query based on a provided resolution. This is meant
+/// to be used inside responsive-bg-images.
+/// @param {string} $resolution - The resolution breakpoint
+/// @param {string} $src - path to the image
+/// @author Gabriele Carson
+@mixin set-img-resolution($resolution, $src) {
+  @if $resolution == "default" {
+    background-image: url("#{$src}");
+  } @else {
+    @include breakpoint($resolution) {
+      background-image: url("#{$src}");
+    }
+  }
+}
+
+
+// Simulates object-fit on internet explorer by stretching the image
+// horizontally and centering it.  This should be used after object-fit-ie
+@mixin object-fit-ie-width() {
+  top: 50%;
+  width: 100%;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+// Simulates object-fit on internet explorer by stretching the image
+// vertically and centering it.
+@mixin object-fit-ie() {
+  img {
+    position: relative;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+
+  .image-wrapper {
+    overflow: hidden;
+  }
+}
+
+
+/// Propotional container mixing from http://www.mademyday.de/css-height-equals-width-with-pure-css.html.
+/// @param {Class} $box - Class name of outer container
+/// @param {Class} $content - Class name of the content dom without the "."
+/// @param {list} $widths - Width of the container
+/// @param {list} $padding-tops - Top padding of the before element
+@mixin proportional-container($box, $content, $widths: (100%, 100%), $padding-tops: (100%, 100%), $hide-overflow: false) {
+  .#{$box} {
+    @include responsive-value(width, $widths...);
+    position: relative;
+
+    @if $hide-overflow {
+      overflow: hidden;
+    }
+
+    &::before {
+      @include responsive-value(padding-top, $padding-tops...);
+      display: block;
+      content: "";
+    }
+  }
+
+  .#{$content} {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@mixin vertical-align() {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+// Proportional container
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    display: block;
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+    content: "";
+  }
+
+  > .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}

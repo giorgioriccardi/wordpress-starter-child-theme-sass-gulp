@@ -1,0 +1,16 @@
+/// Function converting pixel values to rem values
+/// @param {Number | List} $pixels - The pixel value to change (should not include units)
+$base-font-size: 16;
+
+@function rem($pixels) {
+  $rem-list: ();
+
+  @if (type-of($pixels) == list) {
+    @each $val in $pixels {
+      $rem-list: append($rem-list, rem($val));
+    }
+
+    @return $rem-list;
+  }
+  @return ($pixels / $base-font-size) * 1rem;
+}
