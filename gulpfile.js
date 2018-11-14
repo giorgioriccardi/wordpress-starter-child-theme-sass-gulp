@@ -35,13 +35,13 @@ gulp.task('sass', function() {
 
 // JavaScript
 gulp.task('js', function() {
-  return gulp.src(['./js/*.js'])
+  return gulp.src(['./scripts/*.js'])
   .pipe(jshint())
   .pipe(jshint.reporter('default'))
   .pipe(concat('app.js'))
   .pipe(rename({suffix: '.min'}))
   .pipe(uglify())
-  .pipe(gulp.dest('./js'));
+  .pipe(gulp.dest('./scripts'));
 });
 
 // Images
@@ -59,7 +59,7 @@ gulp.task('watch', function() {
   //   proxy: 'http://localhost:8888/wordpress/',
   // });
   gulp.watch('./sass/**/*.scss', ['sass', reload]);
-  gulp.watch(['./js/*.js', '!./js/app.min.js'], ['js', reload]);
+  gulp.watch(['./scripts/*.js', '!./scripts/app.min.js'], ['js', reload]);
   gulp.watch('images/src/*', ['images', reload]);
 });
 
