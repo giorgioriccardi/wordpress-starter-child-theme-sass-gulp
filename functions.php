@@ -20,7 +20,7 @@ function ssws_assets() {
 /********************************************************/
 /* Register and enqueue a script that does not depend on a JavaScript library.
 /********************************************************/
-// add_action( 'wp_enqueue_scripts', 'child_add_scripts' );
+add_action( 'wp_enqueue_scripts', 'child_add_scripts' );
 function child_add_scripts() {
     wp_register_script(
         'ssws-custom-js',
