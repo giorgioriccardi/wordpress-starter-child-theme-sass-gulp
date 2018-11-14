@@ -1,4 +1,11 @@
 # wordpress-starter-child-theme-sass-gulp
 WordPress starter child theme generator with Sass and Gulp task runner
 
-`git clone https://github.com/giorgioriccardi/wordpress-starter-child-theme-sass-gulp.git`
+## Installation
+Wordpress Starter child-theme sass-gulp has been tested on Mac and Windows.
+
+### How to install `Wordpress Starter child-theme sass-gulp`:
+
+1. `$ git clone https://github.com/giorgioriccardi/wordpress-starter-child-theme-sass-gulp.git`
+2. `$ npm install`
+3. `$ gulp watch`
