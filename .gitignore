@@ -1,3 +1,5 @@
+# WordPress stuff #
+###################
 *.log
 wp-config.php
 wp-content/advanced-cache.php
@@ -17,3 +19,64 @@ wp-content/plugins/hello.php
 /sitemap.xml
 /sitemap.xml.gz
 
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+
+# Logs and databases #
+######################
+*.log
+*.sql
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
+
+# Vim generated files #
+######################
+*.un~
+
+# SASS #
+##########
+.sass-cache
+
+# Front End #
+#############
+# Files injected by scripts/update-env.py:
+/.babelrc
+/.eslintrc
+/.editorconfig
+/.sass-lint.yml
+/.pre-commit-config.yaml
+/scripts/update-env.py
+README-frontend.md
+
+# Npm stuff #
+#############
+node_modules
+.tmp
+bower_components
+.env
+
+# Test automation #
+###################
+test/bower_components
+test/allure-report
+test/allure-results
+test/error-shots
+test/logs
+test/screenshots/diff
+test/screenshots/taken
