@@ -2,7 +2,7 @@
  * Breakpoint Configuration
  * @see http://breakpoint-sass.com/
  *
- * Our guidelines: https://camppacific.atlassian.net/wiki/spaces/TT/pages/1628862/Mobile+Responsive+Guidelines
+ * Guidelines: https://www.seatoskywebsolutions.ca/wordpress/wp-content/uploads/2018/11/Mobile-Responsive-Guidelines.pdf
  *
  */
 
@@ -19,7 +19,7 @@ $max-width: $xxlarge;
 
 $breakpoints: ($medium, $large, $xlarge, $xxlarge);
 
-// Device resolutions based on https://camppacific.atlassian.net/wiki/spaces/TT/pages/16908296/Non-Drupal+responsive+image+asset+guidelines
+// Device resolutions based on https://www.seatoskywebsolutions.ca/wordpress/wp-content/uploads/2018/11/Non-Drupal-responsive-images-set-guidelines.pdf
 $one-point-fivex: min-resolution 1.5dppx;
 $twox: min-resolution 2dppx;
 $threex: min-resolution 3dppx;
