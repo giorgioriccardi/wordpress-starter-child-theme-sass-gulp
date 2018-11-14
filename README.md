@@ -1,5 +1,5 @@
 # wordpress-starter-child-theme-sass-gulp
-WordPress starter child theme generator with Sass pre-processor and Gulp task runner
+WordPress starter child theme generator with Sass pre-processor, JavaScript minifier, Image optimizer, Gulp task runner
 
 ## Installation
 Wordpress Starter child-theme sass-gulp has been tested on Mac and Windows.
@@ -9,4 +9,4 @@ Wordpress Starter child-theme sass-gulp has been tested on Mac and Windows.
 2. `$ npm install`
 3. `$ gulp watch`
 4. run `$ gulp js` to minify all .js files
-5. run `$gulp images` to optimize images in the `images/src` folder 
+5. run `$ gulp images` to optimize images in the `images/src` folder 

@@ -7,7 +7,7 @@ add_action( 'wp_enqueue_scripts', 'child_add_scripts' );
 function child_add_scripts() {
     wp_register_script(
         'ssws-custom-js',
-        get_stylesheet_directory_uri() . '/scripts/app.js',
+        get_stylesheet_directory_uri() . '/scripts/app.min.js',
         false,
         '1.0',
         true
