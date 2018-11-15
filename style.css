@@ -1,0 +1,81 @@
+/*
+  Theme Name:     {child-theme-name}
+  Theme URI:      http://seatoskywebsolutions.ca
+  Description:    Custom child-theme for {your-project}
+  Author:         Giorgio Riccardi @ SSWS
+  Author URI:     https://seatoskywebsolutions.ca
+  Template:       {your-theme}
+  Version:        1.0.0
+*/
+/*!-------------------------------------------------------------
+# Global: SASS styles examples; Functions, Mixins, Variables
+## !!! Remove these sample rules from style.scss, write your custom styles
+--------------------------------------------------------------*/
+/**
+ * Breakpoint Configuration
+ * @see http://breakpoint-sass.com/
+ *
+ * Guidelines: https://www.seatoskywebsolutions.ca/wordpress/wp-content/uploads/2018/11/Mobile-Responsive-Guidelines.pdf
+ *
+ */
+.ie11 main {
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto; }
+
+.debug {
+  border: #ff0000 solid 1px; }
+
+body * {
+  box-sizing: border-box;
+  font-family: inherit; }
+
+*::-moz-selection {
+  background-color: #1B7AAF;
+  color: #fff; }
+
+*::selection {
+  background-color: #1B7AAF;
+  color: #fff; }
+
+@media screen and (min-width: 768px) {
+  .col-full {
+    max-width: 83.5em; }
+    footer .col-full {
+      max-width: 66.5em; } }
+
+.woocommerce-message {
+  background-color: rgba(85, 85, 85, 0.3) !important; }
+
+/*!-------------------------------------------------------------
+# End of Global: SASS styles examples; Functions, Mixins, Variables
+--------------------------------------------------------------*/
+/*!-------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+/*!-------------------------------------------------------------
+# End of Buttons
+--------------------------------------------------------------*/
+/*!-------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*!-------------------------------------------------------------
+# End of Navigation
+--------------------------------------------------------------*/
+/*!-------------------------------------------------------------
+# Icons, Links, Lines, Form, Footer
+--------------------------------------------------------------*/
+/*!-------------------------------------------------------------
+# End of Icons, Links, Lines, Form, Footer
+--------------------------------------------------------------*/
+/*!-------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+/*!-------------------------------------------------------------
+# End of Typography
+--------------------------------------------------------------*/
+/*!-------------------------------------------------------------
+# General Styles, Tables
+--------------------------------------------------------------*/
+/*!-------------------------------------------------------------
+# End of General Styles, Tables
+--------------------------------------------------------------*/
