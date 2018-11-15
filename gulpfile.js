@@ -9,9 +9,10 @@ var gulp          = require('gulp'),
     rename        = require('gulp-rename'),
     concat        = require('gulp-concat'),
     jshint        = require('gulp-jshint'),
-    uglify        = require('gulp-uglify'),
+    uglify        = require('gulp-uglify-es').default,
     imagemin      = require('gulp-imagemin'),
     browserSync   = require('browser-sync').create(),
+    notify        = require('gulp-notify')
     reload        = browserSync.reload;
 
 var onError = function( err ) {
@@ -27,21 +28,22 @@ gulp.task('sass', function() {
   .pipe(sass())
   .pipe(autoprefixer())
   .pipe(gulp.dest('./'))
-
   // .pipe(rtlcss())                     // Convert to RTL
   // .pipe(rename({ basename: 'rtl' }))  // Rename to rtl.css
   // .pipe(gulp.dest('./'));             // Output RTL stylesheets (rtl.css)
+  .pipe(notify({ message: 'Sass task complete' }));
 });
 
 // JavaScript
 gulp.task('js', function() {
-  return gulp.src(['./scripts/*.js'])
-  .pipe(jshint())
+  return gulp.src(['./scripts/src/*.js'])
+  .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'))
   .pipe(concat('app.js'))
   .pipe(rename({suffix: '.min'}))
   .pipe(uglify())
-  .pipe(gulp.dest('./scripts'));
+  .pipe(gulp.dest(('./scripts'), {overwrite: true}))
+  .pipe(notify({ message: 'Js task complete' }));
 });
 
 // Images
@@ -49,7 +51,8 @@ gulp.task('images', function() {
   return gulp.src('./images/src/*')
   .pipe(plumber({ errorHandler: onError }))
   .pipe(imagemin({ optimizationLevel: 7, progressive: true }))
-  .pipe(gulp.dest('./images/dist'));
+  .pipe(gulp.dest('./images/dist'))
+  .pipe(notify({ message: 'Images task complete' }));
 });
 
 // Watch
@@ -59,7 +62,7 @@ gulp.task('watch', function() {
   //   proxy: 'http://localhost:8888/wordpress/',
   // });
   gulp.watch('./sass/**/*.scss', ['sass', reload]);
-  gulp.watch(['./scripts/*.js', '!./scripts/app.min.js'], ['js', reload]);
+  gulp.watch(['./scripts/src/*.js', '!/scripts/app.min.js'], ['js', reload]);
   gulp.watch('images/src/*', ['images', reload]);
 });
 
