@@ -42,7 +42,7 @@
 ///   @include responsive-value(margin, auto, 10 0 20 5);
 ///   @include responsive-value(font-size, null, null, 40px);
 ///   @include responsive-value(font-size, 20, null, 40px);
-/// @author Alan Bogusiewicz
+/// @author Alan Bogusiewicz // https://github.com/alanbo
 @mixin responsive-value($property, $small-value, $other-values...) {
 
   @if ($small-value) {
@@ -82,7 +82,7 @@
   }
 }
 
-// @author Gabriele Carson
+// @author Gabrielle Carson https://gitlab.com/ggcarson
 @mixin responsive-bg-images($breakpoints) {
   background-position: center center;
   background-size: cover;
