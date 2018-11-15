@@ -1,8 +1,11 @@
+// Example of SASS implementation to generate some code in style.css
+// Remove these rules and write your custom styles
+
 //IE 11 Flex box
 .ie11 {
-  // main {
-  //   flex: 1 1 auto;
-  // }
+  main {
+    flex: 1 1 auto;
+  }
 }
 
 .debug {
@@ -15,10 +18,9 @@ body * {
 }
 
 *::selection {
-    // background-color: $blue;
-    // color: $white;
+    background-color: $blue;
+    color: $white;
 }
-
 
 @media screen and (min-width: 768px) {
   .col-full {
@@ -31,5 +33,8 @@ body * {
 }
 
 .woocommerce-message {
-  // background-color: $gray-30 !important;
+  background-color: $gray-30 !important;
 }
+
+// End of Example of SASS implementation to generate some code in style.css
+

@@ -2,45 +2,66 @@
   Theme Name:     {child-theme-name}
   Theme URI:      http://seatoskywebsolutions.ca
   Description:    Custom child-theme for {your-project}
-  Author:         SSWS
+  Author:         Giorgio Riccardi @ SSWS
   Author URI:     https://seatoskywebsolutions.ca
   Template:       {your-theme}
   Version:        1.0.0
 */
 
+/*!-------------------------------------------------------------
+# Global: SASS styles examples; Functions, Mixins, Variables
+## !!! Remove these sample rules from style.scss, write your custom styles
+--------------------------------------------------------------*/
 @import "abstractions/functions";
 @import "abstractions/mixins";
 @import "base/breakpoints";
 @import "base/variables";
 @import "base/global";
+/*!-------------------------------------------------------------
+# End of Global: SASS styles examples; Functions, Mixins, Variables
+--------------------------------------------------------------*/
 
 
 /*!-------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
 @import "modules/buttons";
-
+/*!-------------------------------------------------------------
+# End of Buttons
+--------------------------------------------------------------*/
 
 /*!-------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 @import "modules/navigation";
+/*!-------------------------------------------------------------
+# End of Navigation
+--------------------------------------------------------------*/
 
 /*!-------------------------------------------------------------
-# Icons
+# Icons, Links, Lines, Form, Footer
 --------------------------------------------------------------*/
 @import "modules/icons";
 @import "modules/links";
 @import "modules/lines";
 @import "modules/form";
 @import "modules/footer";
+/*!-------------------------------------------------------------
+# End of Icons, Links, Lines, Form, Footer
+--------------------------------------------------------------*/
 
 /*!-------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 @import "base/typography";
+/*!-------------------------------------------------------------
+# End of Typography
+--------------------------------------------------------------*/
 
 /*!-------------------------------------------------------------
-# General Styles
+# General Styles, Tables
 --------------------------------------------------------------*/
 @import "modules/tables";
+/*!-------------------------------------------------------------
+# End of General Styles, Tables
+--------------------------------------------------------------*/
