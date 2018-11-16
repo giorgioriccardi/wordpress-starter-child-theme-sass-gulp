@@ -24,3 +24,8 @@ get_stylesheet_directory_uri() . '/scripts/app.min.js'
 Place images into `images/src` folder
 
 Optimized images will be created into `images/distt` folder
+
+## Todo
+- Review `gulp-uglify-es` vs. `terser` (https://www.npmjs.com/package/terser)
+- Clean-up messy code and comments
+- Test on Linux
