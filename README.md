@@ -28,8 +28,9 @@ Optimized images will be created into `images/distt` folder
 ## Todo
 - Review `gulp-uglify-es` vs. `terser` (https://www.npmjs.com/package/terser)
 - Update dependencies:
-- ~~es6-promise 3.1.2->4.2.5~~
-- gulp-autoprefixer 3.1.1->6.0.0 
-- gulp-sass 2.3.2->4.0.2
+- ~~`es6-promise 3.1.2->4.2.5`~~
+- ~~`gulp-autoprefixer 3.1.1->6.0.0`~~
+- ~~`gulp-sass 2.3.2->4.0.2`~~
+- **Test** `gulp 4.0.0` (right now throws an error) vs. `gulp 3.9.1` that works fine
 - Clean-up messy code and comments
 - Test on Linux
