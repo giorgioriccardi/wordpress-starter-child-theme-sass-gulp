@@ -33,6 +33,7 @@ Optimized images will be created into `images/distt` folder
 - ~~`es6-promise 3.1.2->4.2.5`~~
 - ~~`gulp-autoprefixer 3.1.1->6.0.0`~~
 - ~~`gulp-sass 2.3.2->4.0.2`~~
+- ~~improve and speed-up dependencies build~~
 - ~~Test `gulp 4.0.0` (right now throws an error) vs. `gulp 3.9.1` that works fine~~
 - ~~`gulp 3.9.1->4.0.0`~~
 - Clean-up messy code and comments
