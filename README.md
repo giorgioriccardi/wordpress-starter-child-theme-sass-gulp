@@ -1,6 +1,8 @@
 # wordpress-starter-child-theme-sass-gulp
 WordPress starter child theme generator with Sass preprocessor, JavaScript minifier, Image optimizer, Gulp task runner
 
+## **Requires Gulp ^4.0.0**
+
 ### **Warning**
 Wordpress Starter child-theme sass-gulp has been tested on Mac and Windows, not yet on Linux.
 
@@ -31,7 +33,8 @@ Optimized images will be created into `images/distt` folder
 - ~~`es6-promise 3.1.2->4.2.5`~~
 - ~~`gulp-autoprefixer 3.1.1->6.0.0`~~
 - ~~`gulp-sass 2.3.2->4.0.2`~~
-- **Test** `gulp 4.0.0` (right now throws an error) vs. `gulp 3.9.1` that works fine
+- ~~Test `gulp 4.0.0` (right now throws an error) vs. `gulp 3.9.1` that works fine~~
+- ~~`gulp 3.9.1->4.0.0`~~
 - Clean-up messy code and comments
 - Re-organize modules order
 - Test on Linux

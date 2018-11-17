@@ -22,7 +22,7 @@ var onError = function( err ) {
 };
 
 // Sass
-gulp.task('sass', function() {
+gulp.task('sass', gulp.series(function() {
   return gulp.src('./sass/**/*.scss')
   .pipe(plumber({ errorHandler: onError }))
   .pipe(sass())
@@ -32,10 +32,10 @@ gulp.task('sass', function() {
   // .pipe(rename({ basename: 'rtl' }))  // Rename to rtl.css
   // .pipe(gulp.dest('./'));             // Output RTL stylesheets (rtl.css)
   .pipe(notify({ message: 'Sass task complete' }));
-});
+}));
 
 // JavaScript
-gulp.task('js', function() {
+gulp.task('js', gulp.series(function() {
   return gulp.src(['./scripts/src/*.js'])
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'))
@@ -44,26 +44,26 @@ gulp.task('js', function() {
   .pipe(uglify())
   .pipe(gulp.dest(('./scripts'), {overwrite: true}))
   .pipe(notify({ message: 'Js task complete' }));
-});
+}));
 
 // Images
-gulp.task('images', function() {
+gulp.task('images', gulp.series(function() {
   return gulp.src('./images/src/*')
   .pipe(plumber({ errorHandler: onError }))
   .pipe(imagemin({ optimizationLevel: 7, progressive: true }))
   .pipe(gulp.dest('./images/dist'))
   .pipe(notify({ message: 'Images task complete' }));
-});
+}));
 
 // Watch
-gulp.task('watch', function() {
+gulp.task('watch', gulp.series(function() {
   // browserSync.init({
   //   files: ['./**/*.php'],
   //   proxy: 'http://localhost:8888/wordpress/',
   // });
-  gulp.watch('./sass/**/*.scss', ['sass', reload]);
-  gulp.watch(['./scripts/src/*.js', '!/scripts/app.min.js'], ['js', reload]);
-  gulp.watch('images/src/*', ['images', reload]);
-});
+  gulp.watch('./sass/**/*.scss', gulp.series(['sass', reload]));
+  gulp.watch(['./scripts/src/*.js', '!/scripts/app.min.js'], gulp.series(['js', reload]));
+  gulp.watch('images/src/*', gulp.series(['images', reload]));
+}));
 
-gulp.task('default', ['sass', 'js', 'images', 'watch']);
+gulp.task('default', gulp.series(['sass', 'js', 'images', 'watch']));
