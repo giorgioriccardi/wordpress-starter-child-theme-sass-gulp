@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "WordPress Theme Development Automation with Gulp",
   "author": "Giorgio Riccardi",
-  "license": "MIT",
+  "license": "(MIT OR Apache-2.0)",
   "main": "index.php",
   "homepage": "https://seatoskywebsolutions.ca",
   "repository": {

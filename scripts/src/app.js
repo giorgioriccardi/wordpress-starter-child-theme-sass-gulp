@@ -7,4 +7,4 @@ var multiplyES5 = function(x, y) {
 };
 
 // ES6 Test
-const multiplyES6 = (x, y) => { return x * y };
+const multiplyES6 = (x, y) => { return x * y; };

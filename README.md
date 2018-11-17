@@ -33,4 +33,10 @@ Optimized images will be created into `images/distt` folder
 - ~~`gulp-sass 2.3.2->4.0.2`~~
 - **Test** `gulp 4.0.0` (right now throws an error) vs. `gulp 3.9.1` that works fine
 - Clean-up messy code and comments
+- Re-organize modules order
 - Test on Linux
+
+## Notes
+The Scripts & Sass folders come with some functions, modules, variables, breakpoints and mixins.
+
+They are there just as a reference and they should be deleted and/or customized to fit your project needs upon bundle build.
