@@ -2,6 +2,10 @@
 WordPress starter child theme generator with Sass preprocessor, JavaScript minifier, Image optimizer, Gulp task runner
 
 ## **Requires Gulp ^4.0.0**
+- Run `$ gulp -v` to check requirments
+- Check for outdated npm packages `$ npm outdated`
+- _It is recommended **CLI version 2.0.1**_
+- ICE try to run `$ npm audit fix` and in extreme faulty scenarios `$ npm audit fix --force`
 
 ### **Warning**
 Wordpress Starter child-theme sass-gulp has been tested on Mac and Windows, not yet on Linux.
