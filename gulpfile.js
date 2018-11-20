@@ -12,8 +12,8 @@ var gulp          = require('gulp'),
     uglify        = require('gulp-uglify-es').default,
     imagemin      = require('gulp-imagemin'),
     browserSync   = require('browser-sync').create(),
-    notify        = require('gulp-notify')
-    reload        = browserSync.reload;
+    notify        = require('gulp-notify');
+    // reload        = browserSync.reload;
 
 var onError = function( err ) {
   console.log('An error occurred:', gutil.colors.magenta(err.message));
@@ -61,9 +61,9 @@ gulp.task('watch', gulp.series(function() {
   //   files: ['./**/*.php'],
   //   proxy: 'http://localhost:8888/wordpress/',
   // });
-  gulp.watch('./sass/**/*.scss', gulp.series(['sass', reload]));
-  gulp.watch(['./scripts/src/*.js', '!/scripts/app.min.js'], gulp.series(['js', reload]));
-  gulp.watch('images/src/*', gulp.series(['images', reload]));
+  gulp.watch('./sass/**/*.scss', gulp.series('sass'));
+  gulp.watch(['./scripts/src/*.js', '!/scripts/app.min.js'], gulp.series('js'));
+  gulp.watch('images/src/*', gulp.series('images'));
 }));
 
 gulp.task('default', gulp.series(['sass', 'js', 'images', 'watch']));
