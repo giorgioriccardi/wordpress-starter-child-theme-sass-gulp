@@ -1,6 +1,6 @@
 /// Function converting pixel values to rem values
-/// @param {Number | List} $pixels - The pixel value to change (should not include units)
-$base-font-size: 16;
+/// @param {Number | List} $pixels - The pixel value to change (should not include units) ex. rem(20)
+$base-font-size: 16; // this base-value can be changed in base/_variables.scss
 
 @function rem($pixels) {
   $rem-list: ();
