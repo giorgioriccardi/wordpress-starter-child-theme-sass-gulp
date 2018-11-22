@@ -4,7 +4,11 @@ WordPress starter child theme generator with Sass preprocessor, JavaScript minif
 ## **Requires Gulp ^4.0.0**
 - Run `$ gulp -v` to check requirments
 - Check for outdated npm packages `$ npm outdated`
-- _It is recommended **CLI version 2.0.1**_
+- _Recommended **CLI version 2.0.1** & **Local version 4.0.0**_
+- **Please read this** if you have problems with Gulp version: 
+
+https://github.com/pattern-lab/edition-node-gulp/wiki/Updating-to-Gulp-4
+
 - ICE try to run `$ npm audit fix` and in extreme faulty scenarios `$ npm audit fix --force`
 
 ### **Warning**
