@@ -11,12 +11,31 @@ https://github.com/pattern-lab/edition-node-gulp/wiki/Updating-to-Gulp-4
 
 - ICE try to run `$ npm audit fix` and in extreme faulty scenarios `$ npm audit fix --force`
 
+### **Gulp instructions**
+If there are issues with Gulp versions, mismatch between local and global gulp-cli:
+
+- uninstall gulp globally
+```
+$ npm uninstall gulp -g
+$ npm uninstall gulp-cli -g
+```
+- uninstall locally from your project directory, or delete node_modules
+```
+$ ./your-local-folder/~ npm uninstall gulp
+$ ./your-local-folder/~ rm -rf node_modules/
+```
+- install the latest Gulp 4 CLI tools globally
+```
+npm install gulpjs/gulp-cli -g
+```
+_source:_ https://github.com/pattern-lab/edition-node-gulp/wiki/Updating-to-Gulp-4
+
 ### **Warning**
 Wordpress Starter child-theme sass-gulp has been tested on Mac and Windows, not yet on Linux.
 
 This child-theme generator is still a work in progress, so code comments and `// debug` are still visible
 
-## How to install `Wordpress Starter Child-theme Sass-Gulp`
+# How to install `Wordpress Starter Child-theme Sass-Gulp`
 1. `$ git clone https://github.com/giorgioriccardi/wordpress-starter-child-theme-sass-gulp.git`
 2. `$ npm install`
 3. `$ gulp watch`
@@ -24,7 +43,7 @@ This child-theme generator is still a work in progress, so code comments and `//
 5. run `$ gulp images` only to optimize images in the `images/src` folder
 6. run `$ gulp` to run all the above tasks
 
-### Source for scripts and images
+## Source for scripts and images
 Write `app.js` code into `scripts/src` folder
 
 `Functions.php` has already a function to enqueue the minified version of your scripts
@@ -35,7 +54,7 @@ Place images into `images/src` folder
 
 Optimized images will be created into `images/distt` folder
 
-## Todo
+### Todo
 - Review `gulp-uglify-es` vs. `terser` (https://www.npmjs.com/package/terser)
 - `gulp-util` is deprecated (https://medium.com/gulpjs/gulp-util-ca3b1f9f9ac5)
 - Update dependencies:
@@ -51,7 +70,7 @@ Optimized images will be created into `images/distt` folder
 - Re-organize modules order
 - Test on Linux
 
-## Notes
+### Notes
 The Scripts & Sass folders come with some functions, modules, variables, breakpoints and mixins.
 
 They are there just as a reference and they should be deleted and/or customized to fit your project needs upon bundle build.
