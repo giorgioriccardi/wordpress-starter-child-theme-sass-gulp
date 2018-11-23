@@ -5,10 +5,6 @@ WordPress starter child theme generator with Sass preprocessor, JavaScript minif
 - Run `$ gulp -v` to check requirments
 - Check for outdated npm packages `$ npm outdated`
 - _Recommended **CLI version 2.0.1** & **Local version 4.0.0**_
-- **Please read this** if you have problems with Gulp version: 
-
-https://github.com/pattern-lab/edition-node-gulp/wiki/Updating-to-Gulp-4
-
 - ICE try to run `$ npm audit fix` and in extreme faulty scenarios `$ npm audit fix --force`
 
 ### **Gulp instructions**
@@ -57,8 +53,8 @@ Optimized images will be created into `images/distt` folder
 
 ### Todo
 - Review `gulp-uglify-es` vs. `terser` (https://www.npmjs.com/package/terser)
-- `gulp-util` is deprecated (https://medium.com/gulpjs/gulp-util-ca3b1f9f9ac5)
-- Update dependencies:
+- Fix `gulp-util` is deprecated (https://medium.com/gulpjs/gulp-util-ca3b1f9f9ac5)
+- Update dependencies
 - ~~`es6-promise 3.1.2->4.2.5`~~
 - ~~`gulp-autoprefixer 3.1.1->6.0.0`~~
 - ~~`gulp-sass 2.3.2->4.0.2`~~
