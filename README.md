@@ -12,13 +12,14 @@ https://github.com/pattern-lab/edition-node-gulp/wiki/Updating-to-Gulp-4
 - ICE try to run `$ npm audit fix` and in extreme faulty scenarios `$ npm audit fix --force`
 
 ### **Gulp instructions**
-If there are issues with Gulp versions, mismatch between local and global gulp-cli:
+If there are issues with Gulp versions, commonly mismatch between local and global gulp-cli, please try these steps:
 
 - uninstall gulp globally
 ```
 $ npm uninstall gulp -g
 $ npm uninstall gulp-cli -g
 ```
+it might require to remove manually previuous version folders
 - uninstall locally from your project directory, or delete node_modules
 ```
 $ ./your-local-folder/~ npm uninstall gulp
@@ -65,9 +66,9 @@ Optimized images will be created into `images/distt` folder
 - ~~Test `gulp 4.0.0` (right now throws an error) vs. `gulp 3.9.1` that works fine~~
 - ~~`gulp 3.9.1->4.0.0`~~
 - ~~`browserSync.reload` stops recursive tasks~~
-- Error with `CLI version 3.9.1`
+- ~~Error with `CLI version 3.9.1`~~
 - Clean-up messy code and comments
-- Re-organize modules order
+- ~~Re-organize modules order~~
 - Test on Linux
 
 ### Notes
