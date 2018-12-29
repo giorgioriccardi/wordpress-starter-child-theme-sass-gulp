@@ -38,6 +38,10 @@ gulp.task('sass', gulp.series(function() {
 // JavaScript
 gulp.task('js', gulp.series(function() {
   return gulp.src(['./scripts/src/*.js'])
+  // This will output the non-minified version of app.js
+  .pipe(prettify())
+  .pipe(gulp.dest(('./scripts'), {overwrite: true}))
+  // This will minify and rename to app.min.js
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'))
   .pipe(concat('app.js'))
