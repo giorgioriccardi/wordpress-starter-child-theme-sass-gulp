@@ -10,6 +10,7 @@ var gulp          = require('gulp'),
     concat        = require('gulp-concat'),
     jshint        = require('gulp-jshint'),
     uglify        = require('gulp-uglify-es').default,
+    prettify      = require('gulp-jsbeautifier'),
     imagemin      = require('gulp-imagemin'),
     browserSync   = require('browser-sync').create(),
     notify        = require('gulp-notify');
