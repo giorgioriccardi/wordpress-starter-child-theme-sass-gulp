@@ -37,17 +37,17 @@ gulp.task('sass', gulp.series(function() {
 
 // JavaScript
 gulp.task('js', gulp.series(function() {
-  return gulp.src(['./scripts/src/*.js'])
+  return gulp.src(['./js/src/*.js'])
   // This will output the non-minified version of app.js
   .pipe(prettify())
-  .pipe(gulp.dest(('./scripts'), {overwrite: true}))
+  .pipe(gulp.dest(('./js'), {overwrite: true}))
   // This will minify and rename to app.min.js
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'))
   .pipe(concat('app.js'))
   .pipe(rename({suffix: '.min'}))
   .pipe(uglify())
-  .pipe(gulp.dest(('./scripts'), {overwrite: true}))
+  .pipe(gulp.dest(('./js'), {overwrite: true}))
   .pipe(notify({ message: 'Js task complete' }));
 }));
 
@@ -67,7 +67,7 @@ gulp.task('watch', gulp.series(function() {
   //   proxy: 'http://localhost:8888/wordpress/',
   // });
   gulp.watch('./sass/**/*.scss', gulp.series('sass'));
-  gulp.watch(['./scripts/src/*.js', '!/scripts/app.min.js'], gulp.series('js'));
+  gulp.watch(['./js/src/*.js', '!/js/app.min.js'], gulp.series('js'));
   gulp.watch('images/src/*', gulp.series('images'));
 }));
 
